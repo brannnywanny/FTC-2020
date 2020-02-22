@@ -117,6 +117,8 @@ public class TeleopModeDrive extends OpMode
         left_stick_y = gamepad1.left_stick_y;
         right_stick_x = gamepad1.right_stick_x;
         right_stick_y = gamepad1.right_stick_y;
+
+        double power = rightTrigger+leftTrigger;
         
         // Setting up Null Zone for the robot
          if (power < 0.05 & power > -0.05) {
@@ -124,17 +126,17 @@ public class TeleopModeDrive extends OpMode
          }
 
         // allows robot to move fowards and backwards
-        if (left_stick_x = 0) {
-            moveRegular(rightTrigger+leftTrigger);
+        if (left_stick_x == 0) {
+            moveRegular(power);
         } else if (left_stick_x < 0) {
-            moveLeft(rightTrigger+leftTrigger);
+            moveLeft(power);
         } else if (left_stick_x > 0) {
-            moveRight(rightTrigger+leftTrigger);
+            moveRight(power);
         }
 
         // Show the elapsed game time and wheel power.
         telemetry.addData("Status", "Run Time: " + runtime.toString());
-        telemetry.addData("Motors", "left (%.2f), right (%.2f)", leftPower, rightPower);
+        telemetry.addData("Motors", "power (%.2f)", power);
     }
 
     /*
