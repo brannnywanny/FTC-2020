@@ -24,10 +24,10 @@ public class TeleopModeDrive extends OpMode
     // Sets variables to 0, to reset them before they are used
     double leftTrigger = 0;
     double rightTrigger = 0;
-    double left_stick_X = 0;
-    double left_stick_Y = 0;
-    double right_stick_X = 0;
-    double right_stick_Y = 0;
+    double left_stick_x = 0;
+    double left_stick_y = 0;
+    double right_stick_x = 0;
+    double right_stick_y = 0;
 
     /*
      * Code to run ONCE when the driver hits INIT
@@ -113,10 +113,10 @@ public class TeleopModeDrive extends OpMode
 
         rightTrigger = gamepad1.right_trigger;
         leftTrigger = -gamepad1.left_trigger;
-        left_stick_X = gamepad1.left_stick_X;
-        left_stick_Y = gamepad1.left_stick_Y;
-        right_stick_X = gamepad1.left_stick_X;
-        right_stick_Y = gamepad1.leftstick_Y;
+        left_stick_x = gamepad1.left_stick_x;
+        left_stick_y = gamepad1.left_stick_y;
+        right_stick_x = gamepad1.right_stick_x;
+        right_stick_y = gamepad1.right_stick_y;
         
         // Setting up Null Zone for the robot
          if (power < 0.05 & power > -0.05) {
@@ -124,11 +124,11 @@ public class TeleopModeDrive extends OpMode
          }
 
         // allows robot to move fowards and backwards
-        if (left_stick_X = 0) {
+        if (left_stick_x = 0) {
             moveRegular(rightTrigger+leftTrigger);
-        } else if (left_stick_X < 0) {
+        } else if (left_stick_x < 0) {
             moveLeft(rightTrigger+leftTrigger);
-        } else if (left_stick_X > 0) {
+        } else if (left_stick_x > 0) {
             moveRight(rightTrigger+leftTrigger);
         }
 
