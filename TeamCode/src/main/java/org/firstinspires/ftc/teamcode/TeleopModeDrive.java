@@ -10,9 +10,9 @@ import com.qualcomm.robotcore.util.ElapsedTime;
 import com.qualcomm.robotcore.util.Range;
 
 
-@TeleOp(name="Basic: Iterative OpMode", group="Iterative Opmode")
+@TeleOp(name="Basic: Test Iterative OpMode", group="Iterative Opmode")
 @Disabled
-public class BasicOpMode_Iterative extends OpMode
+public class TeleopModeDrive extends OpMode
 {
     // Declare OpMode members.
     private ElapsedTime runtime = new ElapsedTime();
