@@ -125,8 +125,8 @@ public class TeleopModeDrive extends OpMode
              power = 0;
          }
 
-         if (left_stick_X < 0.05 & left_stick_X > -0.05) {
-             left_stick_X = 0;
+         if (left_stick_x < 0.05 & left_stick_x > -0.05) {
+             left_stick_x = 0;
          }
 
         // allows robot to move fowards and backwards
