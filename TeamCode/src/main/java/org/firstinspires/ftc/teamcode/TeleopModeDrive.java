@@ -190,19 +190,19 @@ public class TeleopModeDrive extends OpMode
             moveLeft(power);
         } else if (left_stick_x > 0) {
             moveRight(power);
-        if (dpad_right + dpad_up = true) {
+        if (dpad_right and dpad_up = true) {
             moveRCornerStrafeForward(power);
         }
 
-        if (dpad_left + dpad_up = true) {
+        if (dpad_left and dpad_up = true) {
             moveLCornerStrafeForward(power);
         }
 
-        if (dpad_down + dpad_left = true) {
+        if (dpad_down and dpad_left = true) {
             moveLCornerStrafeBackward(power);
         }
 
-        if (dpad_down + dpad_right = true) {
+        if (dpad_down and dpad_right = true) {
             moveRCornerStrafeBackward(power);
         }
 
