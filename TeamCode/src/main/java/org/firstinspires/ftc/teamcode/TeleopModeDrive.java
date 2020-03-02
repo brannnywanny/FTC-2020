@@ -28,6 +28,10 @@ public class TeleopModeDrive extends OpMode
     double left_stick_y = 0;
     double right_stick_x = 0;
     double right_stick_y = 0;
+    double dpad_right = 0;
+    double dpad_left = 0;
+    double dpad_up = 0;
+    double dpad_down = 0;
 
     /*
      * Code to run ONCE when the driver hits INIT
@@ -103,6 +107,52 @@ public class TeleopModeDrive extends OpMode
         rightFrontMotor.setPower(power);
         rightBackMotor.setPower(power);
     }
+    
+       void moveLeftStrafe(double power) {
+        leftFrontMotor.setDirection(DcMotor.Direction.REVERSE);
+        rightFrontMotor.setDirection(DcMotor.Direction.FORWARD);
+        leftBackMotor.setDirection(DcMotor.Direction.FORWARD);
+        rightBackMotor.setDirection(DcMotor.Direction.REVERSE);
+        leftFrontMotor.setPower(power);
+        leftBackMotor.setPower(power);
+        rightFrontMotor.setPower(power);
+        rightBackMotor.setPower(power);
+    }
+
+    void moveRightStrafe(double power) {
+        leftFrontMotor.setDirection(DcMotor.Direction.FORWARD);
+        rightFrontMotor.setDirection(DcMotor.Direction.REVERSE);
+        leftBackMotor.setDirection(DcMotor.Direction.REVERSE);
+        rightBackMotor.setDirection(DcMotor.Direction.FORWARD);
+        leftFrontMotor.setPower(power);
+        leftBackMotor.setPower(power);
+        rightFrontMotor.setPower(power);
+        rightBackMotor.setPower(power);
+    }
+    void moveRCornerStrafeForward(double power) {
+        leftFrontMotor.setDirection(DcMotor.Direction.REVERSE);
+        rightBackMotor.setDirection(DcMotor.Direction.REVERSE);
+        leftFrontMotor.setPower(power);
+        rightBackMotor.setPower(power);
+    }
+    void moveLCornerStrafeForward(double power) {
+        leftFrontMotor.setDirection(DcMotor.Direction.FORWARD);
+        rightBackMotor.setDirection(DcMotor.Direction.FORWARD);
+        leftFrontMotor.setPower(power);
+        rightBackMotor.setPower(power);
+    }
+    void moveLCornerStrafeBackward(double power) {
+        leftFrontMotor.setDirection(DcMotor.Direction.REVERSE);
+        rightBackMotor.setDirection(DcMotor.Direction.REVERSE);
+        leftFrontMotor.setPower(power);
+        rightBackMotor.setPower(power);
+    }
+    void moveRCornerStrafeBackward(double power) {
+        leftFrontMotor.setDirection(DcMotor.Direction.FORWARD);
+        rightBackMotor.setDirection(DcMotor.Direction.FORWARD);
+        leftFrontMotor.setPower(power);
+        rightBackMotor.setPower(power);
+    }
         /*
      * Code to run REPEATEDLY after the driver hits PLAY but before they hit STOP
      */
@@ -117,6 +167,10 @@ public class TeleopModeDrive extends OpMode
         left_stick_y = gamepad1.left_stick_y;
         right_stick_x = gamepad1.right_stick_x;
         right_stick_y = gamepad1.right_stick_y;
+        dpad_left = gamepad1.dpad_left;
+        dpad_right = gamepad1.dpad_right;
+        dpad_up = gamepad1.dpad_up;
+        dpad_down = gamepad1.dpad_down;
 
         double power = rightTrigger+leftTrigger;
         
@@ -136,7 +190,30 @@ public class TeleopModeDrive extends OpMode
             moveLeft(power);
         } else if (left_stick_x > 0) {
             moveRight(power);
+        if (dpad_right + dpad_up = true) {
+            moveRCornerStrafeForward(double power);
         }
+
+        if (dpad_left + dpad_up = true) {
+            moveLCornerStrafeForward(double power);
+        }
+
+        if (dpad_down + dpad_left = true) {
+            moveLCornerStrafeBackward(double power);
+        }
+
+        if (dpad_down + dpad_right = true) {
+            moveRCornerStrafeBackward(double power);
+        }
+
+        if (dpad_right = true) {
+             moveRightStrafe(double power);
+        }
+
+        if (dpad_left = true) {
+             moveLCornerStrafeForward(double power);
+        }
+        
 
         // Show the elapsed game time and wheel power.
         telemetry.addData("Status", "Run Time: " + runtime.toString());
