@@ -28,10 +28,10 @@ public class TeleopModeDrive extends OpMode
     double left_stick_y = 0;
     double right_stick_x = 0;
     double right_stick_y = 0;
-    double dpad_right = 0;
-    double dpad_left = 0;
-    double dpad_up = 0;
-    double dpad_down = 0;
+    boolean dpad_right;
+    boolean dpad_left;
+    boolean dpad_up;
+    boolean dpad_down;
 
     /*
      * Code to run ONCE when the driver hits INIT
@@ -191,27 +191,27 @@ public class TeleopModeDrive extends OpMode
         } else if (left_stick_x > 0) {
             moveRight(power);
         if (dpad_right + dpad_up = true) {
-            moveRCornerStrafeForward(double power);
+            moveRCornerStrafeForward(power);
         }
 
         if (dpad_left + dpad_up = true) {
-            moveLCornerStrafeForward(double power);
+            moveLCornerStrafeForward(power);
         }
 
         if (dpad_down + dpad_left = true) {
-            moveLCornerStrafeBackward(double power);
+            moveLCornerStrafeBackward(power);
         }
 
         if (dpad_down + dpad_right = true) {
-            moveRCornerStrafeBackward(double power);
+            moveRCornerStrafeBackward(power);
         }
 
         if (dpad_right = true) {
-             moveRightStrafe(double power);
+             moveRightStrafe(power);
         }
 
         if (dpad_left = true) {
-             moveLCornerStrafeForward(double power);
+             moveLCornerStrafeForward(power);
         }
         
 
