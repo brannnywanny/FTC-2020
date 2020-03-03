@@ -1,4 +1,4 @@
-package org.firstinspires.ftc.robotcontroller.external.samples;
+package org.firstinspires.ftc.teamcode;
 
 // Importing the needed packages for code
 
@@ -10,9 +10,10 @@ import com.qualcomm.robotcore.util.ElapsedTime;
 import com.qualcomm.robotcore.util.Range;
 
 
+
 @TeleOp(name="Basic: Test Iterative OpMode", group="Iterative Opmode")
 @Disabled
-public class TeleopModeDrive extends OpMode
+public class BasicOpMode_Iterative extends OpMode
 {
     // Declare OpMode members.
     private ElapsedTime runtime = new ElapsedTime();
@@ -223,9 +224,8 @@ public class TeleopModeDrive extends OpMode
     /*
      * Code to run ONCE after the driver hits STOP
      */
-    @Override
+
     public void stop() {
-
+         }
         }
-
 }
